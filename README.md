@@ -24,7 +24,23 @@ npm install -D typedoc-plugin-external-link
 
 ## Usage
 
-After installation plugin automatically loads and creates links to discord-api-types documentation.
+Create a file with name `external-link-path.js` at the root of the project. The file should export `packageNames` and a `getURL` function.
+
+### Example
+
+```js
+const packageNames = ['typedoc', 'typedoc-plugin-external-link'];
+
+/**
+ *
+ * @type {import('typedoc-plugin-external-link').getURL}
+ */
+function getURL(packageName, type) {
+	return 'https://github.com/imranbarbhuiya/typedoc-plugin-external-link';
+}
+
+module.exports = { packageNames, getURL };
+```
 
 ## Buy me some doughnuts
 
