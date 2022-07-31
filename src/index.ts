@@ -4,14 +4,14 @@ import { resolvePath } from './utils/util';
 
 export function load(app: Application) {
 	app.options.addDeclaration({
-		name: 'external-link-path',
+		name: 'externalLinkPath',
 		help: 'Define the path to the external links config file',
 		type: ParameterType.Path,
-		defaultValue: 'external-config.js'
+		defaultValue: 'externalConfig.js'
 	});
 
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires
-	const { packageNames, getURL } = resolvePath<{ packageNames: string[]; getURL: getURL }>(app.options.getValue('external-link-path') as string);
+	const { packageNames, getURL } = resolvePath<{ packageNames: string[]; getURL: getURL }>(app.options.getValue('externalLinkPath') as string);
 
 	if (!packageNames) {
 		return app.logger.verbose('No package names provided. Exiting...');

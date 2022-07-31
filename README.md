@@ -24,7 +24,7 @@ npm install -D typedoc-plugin-external-link
 
 ## Usage
 
-Create a file with name `external-link-path.js` at the root of the project. The file should export `packageNames` and a `getURL` function.
+Create a file with name `externalConfig.js` at the root of the project. The file should export `packageNames` and a `getURL` function.
 
 ### Example
 
