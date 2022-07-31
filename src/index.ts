@@ -1,16 +1,9 @@
-import { ParameterType, type Application } from 'typedoc';
+import { type Application } from 'typedoc';
 import type { getURL } from './interfaces/config';
 import { resolvePath } from './utils/util';
 
 export function load(app: Application) {
-	app.options.addDeclaration({
-		name: 'externalLinkPath',
-		help: 'Define the path to the external links config file',
-		type: ParameterType.Path,
-		defaultValue: 'externalConfig.js'
-	});
-
-	const filePath = app.options.getValue('externalLinkPath') as string;
+	const filePath = resolvePath<{ externalLinkPath?: string }>('typedoc.json')?.externalLinkPath ?? 'externalConfig.js';
 
 	const config = resolvePath<{ packageNames: string[]; getURL: getURL }>(filePath);
 

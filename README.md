@@ -42,6 +42,8 @@ function getURL(packageName, type) {
 module.exports = { packageNames, getURL };
 ```
 
+You can specify custom config file path by adding `externalLinkPath` in `typedoc.json` file.
+
 ## Buy me some doughnuts
 
 If you want to support me by donating, you can do so by using any of the following methods. Thank you very much in advance!
