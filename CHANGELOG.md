@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [1.0.1](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/compare/v1.0.0...v1.0.1) - (2022-07-31)
+
+## 🐛 Bug Fixes
+
+- Declare option ([9eea7c8](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/commit/9eea7c822383a9819f853c42c60101735a7c6ca4))
+
 # [0.0.1]
 (https://github.com/imranbarbhuiya/typedoc-plugin-external-link/tree/v0.0.1) - (2022-07-31)
 
