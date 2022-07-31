@@ -1,50 +1,30 @@
 <div align="center">
 
-# @imranbarbhuiya/package-template
+# typedoc-plugin-external-link
 
-**Template for Parbez's Repositories.**
+**A typedoc plugin to add custom external links.**
 
-[![GitHub](https://img.shields.io/github/license/imranbarbhuiya/package-template)](https://github.com/imranbarbhuiya/package-template/blob/main/LICENSE)
-[![codecov](https://codecov.io/gh/imranbarbhuiya/package-template/branch/main/graph/badge.svg?token=token)](https://codecov.io/gh/imranbarbhuiya/package-template)
-[![npm](https://img.shields.io/npm/v/@imranbarbhuiya/package-template?color=crimson&logo=npm&style=flat-square)](https://www.npmjs.com/package/@imranbarbhuiya/package-template)
+[![GitHub](https://img.shields.io/github/license/imranbarbhuiya/typedoc-plugin-external-link)](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/blob/main/LICENSE)
+[![codecov](https://codecov.io/gh/imranbarbhuiya/typedoc-plugin-external-link/branch/main/graph/badge.svg?token=token)](https://codecov.io/gh/imranbarbhuiya/typedoc-plugin-external-link)
+[![npm](https://img.shields.io/npm/v/typedoc-plugin-external-link?color=crimson&logo=npm&style=flat-square)](https://www.npmjs.com/package/typedoc-plugin-external-link)
 
 </div>
 
-## Steps after creating a repo with this template
-
-1. Find and replace all instances of `template` with the package name.
-2. remove `true ||` from workflows
-3. Ensure branch protection is on
-4. Enable Codecov for the repository
-5. Remove this section from the README
-
 ## Description
 
-A description of the package.
-
-Read Full Documentation [here](https://template.js.org/).
-
-## Features
-
--   Written In Typescript
--   Offers CJS, ESM and UMD builds
--   Full TypeScript & JavaScript support
+A typedoc plugin to add custom external links.
 
 ## Install
 
 You can use the following command to install this package, or replace npm install with your package manager of choice.
 
 ```bash
-npm i @imranbarbhuiya/package-template
+npm install -D typedoc-plugin-external-link
 ```
 
 ## Usage
 
-```ts
-import { fn } from 'template';
-```
-
-### Some contents goes here
+After installation plugin automatically loads and creates links to discord-api-types documentation.
 
 ## Buy me some doughnuts
 
@@ -63,7 +43,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/imranbarbhuiya"><img src="https://avatars.githubusercontent.com/u/74945038?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Parbez</b></sub></a><br /><a href="https://github.com/imranbarbhuiya/package-template/commits?author=imranbarbhuiya" title="Code">💻</a> <a href="#maintenance-imranbarbhuiya" title="Maintenance">🚧</a> <a href="#ideas-imranbarbhuiya" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/imranbarbhuiya"><img src="https://avatars.githubusercontent.com/u/74945038?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Parbez</b></sub></a><br /><a href="https://github.com/imranbarbhuiya/typedoc-plugin-external-link/commits?author=imranbarbhuiya" title="Code">💻</a> <a href="#maintenance-imranbarbhuiya" title="Maintenance">🚧</a> <a href="#ideas-imranbarbhuiya" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://renovate.whitesourcesoftware.com"><img src="https://avatars.githubusercontent.com/u/25180681?v=4?s=100" width="100px;" alt=""/><br /><sub><b>WhiteSource Renovate</b></sub></a><br /><a href="#maintenance-renovate-bot" title="Maintenance">🚧</a></td>
   </tr>
 </table>

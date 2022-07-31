@@ -1,6 +1,2 @@
-name: template
+name: typedoc-plugin-external-link
 packagePath: .
-org: imranbarbhuiya
-monoRepo: false
-commitMessageTemplate: 'chore(release): release {{new-version}}'
-tagTemplate: v{{new-version}}

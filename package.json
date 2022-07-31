@@ -1,11 +1,9 @@
 {
-	"name": "@imranbarbhuiya/package-template",
+	"name": "typedoc-plugin-external-link",
 	"version": "0.0.1",
-	"description": "Package description.",
+	"description": "A typedoc plugin to add custom external links.",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
-	"browser": "dist/index.global.js",
-	"unpkg": "dist/index.global.js",
 	"types": "dist/index.d.ts",
 	"exports": {
 		"import": "./dist/index.mjs",
@@ -26,22 +24,26 @@
 		"typecheck": "tsc -p tsconfig.eslint.json",
 		"bump": "cliff-jumper",
 		"check-update": "cliff-jumper --dry-run",
-		"prepack": "rollup-type-bundler && pinst --disable",
+		"prepack": "yarn build && pinst --disable",
 		"postinstall": "husky install .github/husky",
 		"postpack": "pinst --enable"
 	},
 	"keywords": [
-		"some keywords"
+		"typedoc",
+		"typedocplugin",
+		"typedoc-plugin",
+		"typescript",
+		"ts",
+		"yarn",
+		"external-link",
+		"link",
+		"dependencies"
 	],
-	"publishConfig": {
-		"access": "public"
-	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-conventional": "^17.0.3",
 		"@favware/cliff-jumper": "^1.8.6",
 		"@favware/npm-deprecate": "^1.0.5",
-		"@favware/rollup-type-bundler": "^1.0.10",
 		"@sapphire/eslint-config": "^4.3.7",
 		"@sapphire/prettier-config": "^1.4.3",
 		"@types/node": "^18.6.1",
@@ -69,12 +71,12 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/imranbarbhuiya/template.git"
+		"url": "git+https://github.com/imranbarbhuiya/typedoc-plugin-external-link.git"
 	},
 	"bugs": {
-		"url": "https://github.com/imranbarbhuiya/template/issues"
+		"url": "https://github.com/imranbarbhuiya/typedoc-plugin-external-link/issues"
 	},
-	"homepage": "https://template.js.org/",
+	"homepage": "https://github.com/imranbarbhuiya/typedoc-plugin-external-link#readme",
 	"commitlint": {
 		"extends": [
 			"@commitlint/config-conventional"
