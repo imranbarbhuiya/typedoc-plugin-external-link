@@ -10,16 +10,13 @@ export function load(app: Application) {
 		defaultValue: 'externalConfig.js'
 	});
 
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires
-	const { packageNames, getURL } = resolvePath<{ packageNames: string[]; getURL: getURL }>(app.options.getValue('externalLinkPath') as string);
+	const config = resolvePath<{ packageNames: string[]; getURL: getURL }>(app.options.getValue('externalLinkPath') as string);
 
-	if (!packageNames) {
-		return app.logger.verbose('No package names provided. Exiting...');
+	if (!config) {
+		return app.logger.error('External links config file not found');
 	}
 
-	if (!getURL) {
-		return app.logger.verbose("getURL function isn't provided. Exiting...");
-	}
+	const { packageNames, getURL } = config;
 
 	for (const packageName of packageNames)
 		app.renderer.addUnknownSymbolResolver(packageName, (name) => {

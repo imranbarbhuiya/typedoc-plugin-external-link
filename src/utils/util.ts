@@ -1,7 +1,7 @@
-export function resolvePath<T>(path: string): { [key in keyof T]+?: T[key] } {
+export function resolvePath<T>(path: string): T | null {
 	try {
 		return require(path);
 	} catch {
-		return {};
+		return null;
 	}
 }
