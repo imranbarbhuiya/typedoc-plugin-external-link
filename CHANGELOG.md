@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [1.0.2](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/compare/v1.0.1...v1.0.2) - (2022-07-31)
+
+## 🐛 Bug Fixes
+
+- Add failed to resolve log ([b7bfde6](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/commit/b7bfde6c3cb0660bb2edb6b12a0e50ad80f10512))
+
 # [1.0.1](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/compare/v1.0.0...v1.0.1) - (2022-07-31)
 
 ## 🐛 Bug Fixes
