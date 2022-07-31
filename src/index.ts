@@ -17,15 +17,25 @@ export function load(app: Application) {
 	const config = resolvePath<{ packageNames: string[]; getURL: getURL }>(filePath);
 
 	if (!config) {
-		return app.logger.error(`External links config file \`${resolveFilePath(filePath)}\` not found`);
+		return app.logger.error(`[typedoc-plugin-external-link]: External links config file \`${resolveFilePath(filePath)}\` not found`);
 	}
 
 	const { packageNames, getURL } = config;
 
-	for (const packageName of packageNames)
+	for (const packageName of packageNames) {
+		const failed = new Set<string>();
 		app.renderer.addUnknownSymbolResolver(packageName, (name) => {
-			return getURL(packageName, name);
+			const url = getURL(packageName, name);
+
+			if (!url && !failed.has(name)) {
+				failed.add(name);
+
+				app.logger.verbose(`[typedoc-plugin-external-link]: Failed to resolve type: \`${name}\` in \`${packageName}\``);
+			}
+
+			return url;
 		});
+	}
 }
 
 export * from './interfaces/config';
