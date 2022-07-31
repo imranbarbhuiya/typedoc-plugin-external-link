@@ -10,10 +10,12 @@ export function load(app: Application) {
 		defaultValue: 'externalConfig.js'
 	});
 
-	const config = resolvePath<{ packageNames: string[]; getURL: getURL }>(app.options.getValue('externalLinkPath') as string);
+	const filePath = app.options.getValue('externalLinkPath') as string;
+
+	const config = resolvePath<{ packageNames: string[]; getURL: getURL }>(filePath);
 
 	if (!config) {
-		return app.logger.error('External links config file not found');
+		return app.logger.error(`External links config file \`${filePath}\` not found`);
 	}
 
 	const { packageNames, getURL } = config;
