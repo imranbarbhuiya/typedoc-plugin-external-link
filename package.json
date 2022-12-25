@@ -41,9 +41,9 @@
 		"@sapphire/eslint-config": "^4.3.8",
 		"@sapphire/prettier-config": "^1.4.4",
 		"@types/node": "^18.11.17",
-		"@typescript-eslint/eslint-plugin": "^5.46.1",
-		"@typescript-eslint/parser": "^5.46.1",
-		"@vitest/coverage-c8": "^0.25.8",
+		"@typescript-eslint/eslint-plugin": "^5.47.0",
+		"@typescript-eslint/parser": "^5.47.0",
+		"@vitest/coverage-c8": "^0.26.2",
 		"c8": "^7.12.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.30.0",
@@ -57,7 +57,7 @@
 		"tsup": "^6.5.0",
 		"typedoc": "^0.23.23",
 		"typescript": "^4.9.4",
-		"vitest": "^0.25.8"
+		"vitest": "^0.26.2"
 	},
 	"files": [
 		"dist/**/*.js*",
@@ -89,6 +89,6 @@
 		"ansi-regex": "^5.0.1",
 		"minimist": "^1.2.7"
 	},
-	"packageManager": "yarn@3.3.0",
+	"packageManager": "yarn@3.3.1",
 	"prettier": "@sapphire/prettier-config"
 }
