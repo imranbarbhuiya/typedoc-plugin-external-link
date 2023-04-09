@@ -10,5 +10,6 @@ export default defineConfig({
 	sourcemap: true,
 	target: 'esnext',
 	keepNames: true,
-	tsconfig: 'src/tsconfig.json'
+	tsconfig: 'src/tsconfig.json',
+	treeshake: true
 });
