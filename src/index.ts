@@ -1,41 +1,52 @@
-import { ParameterType, type Application } from 'typedoc';
+import { Converter, ParameterType, type Application } from 'typedoc';
 import type { getURL } from './interfaces/config';
-import { resolveFilePath, resolvePath } from './utils/util';
+import { resolvePath } from './utils/util';
 
 export function load(app: Application) {
 	app.options.addDeclaration({
 		name: 'externalLinkPath',
 		help: 'Define the path to the external links config file',
-		type: ParameterType.String,
+		type: ParameterType.Path,
 		defaultValue: 'externalConfig.js'
 	});
 
-	// this option doesn't work so manually reading the file
-	const filePath =
-		resolvePath<{ externalLinkPath?: string }>('typedoc.json')?.externalLinkPath ?? (app.options.getValue('externalLinkPath') as string);
+	app.converter.on(Converter.EVENT_RESOLVE, () => {
+		const filePath = app.options.getValue('externalLinkPath') as string;
 
-	const config = resolvePath<{ packageNames: string[]; getURL: getURL }>(filePath);
+		const config = resolvePath<{ packageNames: string[]; getURL: getURL }>(filePath);
 
-	if (!config) {
-		return app.logger.error(`[typedoc-plugin-external-link]: External links config file \`${resolveFilePath(filePath)}\` not found`);
-	}
+		if (!config) {
+			return app.logger.error(`[typedoc-plugin-external-link]: External links config file \`${filePath}\` not found`);
+		}
 
-	const { packageNames, getURL } = config;
+		const { packageNames, getURL } = config;
 
-	for (const packageName of packageNames) {
-		const failed = new Set<string>();
-		app.renderer.addUnknownSymbolResolver(packageName, (name) => {
-			const url = getURL(packageName, name);
+		if (!packageNames.length) {
+			return app.logger.error(`[typedoc-plugin-external-link]: No packages defined in \`${filePath}\``);
+		}
 
-			if (!url && !failed.has(name)) {
-				failed.add(name);
+		app.converter.addUnknownSymbolResolver((ref) => {
+			if (!packageNames.includes(ref.moduleSource!)) return;
+			const name = ref.symbolReference?.path?.[0].path;
+			const url = getURL(ref.moduleSource!, name);
 
-				app.logger.verbose(`[typedoc-plugin-external-link]: Failed to resolve type: \`${name}\` in \`${packageName}\``);
+			// If someone did {@link lodash!}, link them directly to the home page.
+			if (!ref.symbolReference && url) return url;
+
+			if (!ref.symbolReference?.path?.length) {
+				// Someone included a meaning, but not a path.
+				// https://typedoc.org/guides/declaration-references/#meaning
+				return;
 			}
 
-			return url;
+			if (!url) return;
+
+			return {
+				target: url,
+				caption: name
+			};
 		});
-	}
+	});
 }
 
 export * from './interfaces/config';

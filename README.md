@@ -22,6 +22,8 @@ You can use the following command to install this package, or replace npm instal
 npm install -D typedoc-plugin-external-link
 ```
 
+> **Note**: This plugin requires typedoc `>=0.24.0`.
+
 ## Usage
 
 Create a file with name `externalConfig.js` at the root of the project. The file should export `packageNames` and a `getURL` function.
@@ -43,6 +45,8 @@ module.exports = { packageNames, getURL };
 ```
 
 You can specify custom config file path by adding `externalLinkPath` in `typedoc.json` file.
+
+> **Warning**: for `entryPointStrategy=Package`, you need to add `externalLinkPath` to all packages in `typedoc.json` file.
 
 ## Buy me some doughnuts
 

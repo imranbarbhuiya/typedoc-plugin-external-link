@@ -59,6 +59,9 @@
 		"typescript": "^5.0.4",
 		"vitest": "^0.29.8"
 	},
+	"peerDependencies": {
+		"typedoc": ">=0.24.0"
+	},
 	"files": [
 		"dist/**/*.js*",
 		"dist/**/*.mjs*",
