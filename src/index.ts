@@ -11,7 +11,11 @@ export function load(app: Application) {
 	});
 
 	app.converter.on(Converter.EVENT_RESOLVE, () => {
-		const filePath = app.options.getValue('externalLinkPath') as string;
+		const filePath = app.options.getValue('externalLinkPath');
+
+		if (!filePath || typeof filePath !== 'string') {
+			return app.logger.error(`[typedoc-plugin-external-link]: Invalid external links config file path \`${filePath}\` provided`);
+		}
 
 		const config = resolvePath<{ packageNames: string[]; getURL: getURL }>(filePath);
 
