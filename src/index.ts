@@ -1,32 +1,39 @@
 import { Converter, ParameterType, type Application } from 'typedoc';
+
+import { resolvePath } from './utils/util.js';
+
 import type { getURL } from './interfaces/config';
-import { resolvePath } from './utils/util';
 
 export function load(app: Application) {
 	app.options.addDeclaration({
 		name: 'externalLinkPath',
 		help: 'Define the path to the external links config file',
 		type: ParameterType.Path,
-		defaultValue: 'externalConfig.js'
+		defaultValue: 'externalConfig.js',
 	});
 
 	app.converter.on(Converter.EVENT_RESOLVE, () => {
 		const filePath = app.options.getValue('externalLinkPath');
 
 		if (!filePath || typeof filePath !== 'string') {
-			return app.logger.error(`[typedoc-plugin-external-link]: Invalid external links config file path \`${filePath}\` provided`);
+			app.logger.error(
+				`[typedoc-plugin-external-link]: Invalid external links config file path \`${filePath}\` provided`,
+			);
+			return;
 		}
 
-		const config = resolvePath<{ packageNames: string[]; getURL: getURL }>(filePath);
+		const config = resolvePath<{ getURL: getURL; packageNames: string[] }>(filePath);
 
 		if (!config) {
-			return app.logger.error(`[typedoc-plugin-external-link]: External links config file \`${filePath}\` not found`);
+			app.logger.error(`[typedoc-plugin-external-link]: External links config file \`${filePath}\` not found`);
+			return;
 		}
 
 		const { packageNames, getURL } = config;
 
 		if (!packageNames.length) {
-			return app.logger.error(`[typedoc-plugin-external-link]: No packages defined in \`${filePath}\``);
+			app.logger.error(`[typedoc-plugin-external-link]: No packages defined in \`${filePath}\``);
+			return;
 		}
 
 		app.converter.addUnknownSymbolResolver((ref) => {
@@ -48,7 +55,7 @@ export function load(app: Application) {
 			if (ref.symbolReference.path.length === 1) {
 				return {
 					target: url,
-					caption: names[0]
+					caption: names[0],
 				};
 			}
 
@@ -57,4 +64,4 @@ export function load(app: Application) {
 	});
 }
 
-export * from './interfaces/config';
+export * from './interfaces/config.js';
