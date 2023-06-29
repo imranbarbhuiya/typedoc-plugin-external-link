@@ -31,8 +31,8 @@ export function load(app: Application) {
 
 		app.converter.addUnknownSymbolResolver((ref) => {
 			if (!packageNames.includes(ref.moduleSource!)) return;
-			const name = ref.symbolReference?.path?.[0].path;
-			const url = getURL(ref.moduleSource!, name);
+			const names = ref.symbolReference?.path?.map((part) => part.path) ?? [];
+			const url = getURL(ref.moduleSource!, ...names);
 
 			// If someone did {@link lodash!}, link them directly to the home page.
 			if (!ref.symbolReference && url) return url;
@@ -45,10 +45,14 @@ export function load(app: Application) {
 
 			if (!url) return;
 
-			return {
-				target: url,
-				caption: name
-			};
+			if (ref.symbolReference.path.length === 1) {
+				return {
+					target: url,
+					caption: names[0]
+				};
+			}
+
+			return url;
 		});
 	});
 }
