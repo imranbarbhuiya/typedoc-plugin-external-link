@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [2.1.0](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/compare/v2.0.0...v2.1.0) - (2023-06-29)
+
+## 🚀 Features
+
+- Pass all the symbols in the fn ([05ba892](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/commit/05ba8923c91b98fd8b69e06100f9fb258127d952))
+
 # [2.0.0](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/compare/v1.0.3...v2.0.0) - (2023-04-09)
 
 ## 🚀 Features
