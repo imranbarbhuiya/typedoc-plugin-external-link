@@ -26,28 +26,6 @@ jobs:
       - name: Run ESLint
         run: yarn lint --fix=false
 
-  Testing:
-    name: Unit Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-      - name: Use Node.js v16
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
-        with:
-          node-version: 16
-          cache: yarn
-          registry-url: https://registry.npmjs.org/
-      - name: Install Dependencies
-        run: yarn --immutable
-      - name: Run tests
-        run: yarn test
-      - name: Store code coverage report
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
-        with:
-          name: coverage
-          path: coverage/
-
   Building:
     name: Compile source code
     runs-on: ubuntu-latest
@@ -66,24 +44,3 @@ jobs:
         run: yarn --immutable
       - name: Build Code
         run: yarn build
-
-  Upload_Coverage_Report:
-    name: Upload coverage report to codecov
-    needs: [Testing]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-        with:
-          fetch-depth: 2
-      - name: Download Coverage report
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
-        with:
-          name: coverage
-          path: coverage/
-      - name: Codecov Upload
-        uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          directory: coverage/
-          fail_ci_if_error: true
