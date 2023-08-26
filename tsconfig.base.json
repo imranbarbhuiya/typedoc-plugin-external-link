@@ -10,8 +10,8 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"moduleResolution": "node",
+		"moduleResolution": "node16",
+		"skipLibCheck": true,
 		"lib": ["es2021"],
 		"declaration": true,
 		"outDir": "dist"
