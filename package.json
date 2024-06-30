@@ -36,9 +36,9 @@
 		"@commitlint/config-conventional": "^19.2.2",
 		"@favware/cliff-jumper": "^3.0.3",
 		"@favware/npm-deprecate": "^1.0.7",
-		"@types/node": "^20.14.8",
-		"@typescript-eslint/eslint-plugin": "^7.13.1",
-		"@typescript-eslint/parser": "^7.13.1",
+		"@types/node": "^20.14.9",
+		"@typescript-eslint/eslint-plugin": "^7.14.1",
+		"@typescript-eslint/parser": "^7.14.1",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.57.0",
 		"eslint-config-mahir": "^0.0.43",
@@ -47,7 +47,7 @@
 		"pinst": "^3.0.0",
 		"prettier": "^3.3.2",
 		"tsup": "^8.1.0",
-		"typedoc": "^0.26.1",
+		"typedoc": "^0.26.3",
 		"typescript": "^5.5.2"
 	},
 	"peerDependencies": {
