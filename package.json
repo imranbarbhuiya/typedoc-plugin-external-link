@@ -32,13 +32,13 @@
 		"dependencies"
 	],
 	"devDependencies": {
-		"@commitlint/cli": "^19.4.0",
-		"@commitlint/config-conventional": "^19.2.2",
+		"@commitlint/cli": "^19.4.1",
+		"@commitlint/config-conventional": "^19.4.1",
 		"@favware/cliff-jumper": "^4.1.0",
 		"@favware/npm-deprecate": "^1.0.7",
-		"@types/node": "^20.16.1",
-		"@typescript-eslint/eslint-plugin": "^8.2.0",
-		"@typescript-eslint/parser": "^8.2.0",
+		"@types/node": "^20.16.2",
+		"@typescript-eslint/eslint-plugin": "^8.3.0",
+		"@typescript-eslint/parser": "^8.3.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.57.0",
 		"eslint-config-mahir": "^0.0.45",
