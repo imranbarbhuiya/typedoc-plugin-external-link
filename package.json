@@ -34,7 +34,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^19.5.0",
 		"@commitlint/config-conventional": "^19.5.0",
-		"@favware/cliff-jumper": "^4.1.0",
+		"@favware/cliff-jumper": "^5.0.0",
 		"@favware/npm-deprecate": "^1.0.7",
 		"@types/node": "^20.17.1",
 		"@typescript-eslint/eslint-plugin": "^8.11.0",
