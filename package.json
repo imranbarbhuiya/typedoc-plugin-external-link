@@ -36,18 +36,18 @@
 		"@commitlint/config-conventional": "^19.5.0",
 		"@favware/cliff-jumper": "^4.1.0",
 		"@favware/npm-deprecate": "^1.0.7",
-		"@types/node": "^20.16.11",
-		"@typescript-eslint/eslint-plugin": "^8.8.1",
-		"@typescript-eslint/parser": "^8.8.1",
+		"@types/node": "^20.17.1",
+		"@typescript-eslint/eslint-plugin": "^8.11.0",
+		"@typescript-eslint/parser": "^8.11.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.57.1",
-		"eslint-config-mahir": "^0.0.45",
+		"eslint-config-mahir": "^0.0.46",
 		"husky": "^9.1.6",
 		"lint-staged": "^15.2.10",
 		"pinst": "^3.0.0",
 		"prettier": "^3.3.3",
-		"tsup": "^8.3.0",
-		"typedoc": "^0.26.9",
+		"tsup": "^8.3.4",
+		"typedoc": "^0.26.10",
 		"typescript": "^5.6.3"
 	},
 	"peerDependencies": {
@@ -83,5 +83,5 @@
 		"ansi-regex": "^5.0.1",
 		"minimist": "^1.2.8"
 	},
-	"packageManager": "yarn@4.5.0"
+	"packageManager": "yarn@4.5.1"
 }
