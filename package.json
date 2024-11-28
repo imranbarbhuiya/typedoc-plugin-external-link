@@ -4,16 +4,16 @@
 	"description": "A typedoc plugin to add custom external links.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"type": "module",
 	"sideEffects": false,
 	"license": "MIT",
 	"author": "@imranbarbhuiya",
 	"scripts": {
 		"docs": "typedoc",
-		"lint": "eslint src --ext ts --fix",
-		"format": "prettier --write \"src/**/*.ts\"",
-		"update": "yarn upgrade-interactive",
+		"lint": "eslint . --cache",
+		"format": "prettier --write . --cache",
 		"build": "tsup",
-		"typecheck": "tsc -p tsconfig.eslint.json",
+		"typecheck": "tsc -p tsconfig.json",
 		"bump": "cliff-jumper",
 		"check-update": "cliff-jumper --dry-run",
 		"prepack": "yarn build && pinst --disable",
@@ -40,8 +40,8 @@
 		"@typescript-eslint/eslint-plugin": "^8.16.0",
 		"@typescript-eslint/parser": "^8.16.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^8.57.1",
-		"eslint-config-mahir": "^0.0.46",
+		"eslint": "^9.15.0",
+		"eslint-config-mahir": "^1.0.6",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.2.10",
 		"pinst": "^3.0.0",
@@ -51,7 +51,7 @@
 		"typescript": "^5.7.2"
 	},
 	"peerDependencies": {
-		"typedoc": ">=0.24.0"
+		"typedoc": ">=0.27.0"
 	},
 	"files": [
 		"dist/**/*.js*",
@@ -72,7 +72,7 @@
 		]
 	},
 	"lint-staged": {
-		"*.{mjs,js,ts}": "eslint --fix --ext mjs,js,ts"
+		"*.{mjs,js,ts}": "eslint --fix"
 	},
 	"config": {
 		"commitizen": {

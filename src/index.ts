@@ -64,4 +64,4 @@ export function load(app: Application) {
 	});
 }
 
-export * from './interfaces/config.js';
+export type * from './interfaces/config.js';
