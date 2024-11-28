@@ -1,6 +1,6 @@
 {
 	"name": "typedoc-plugin-external-link",
-	"version": "2.1.2",
+	"version": "3.0.0",
 	"description": "A typedoc plugin to add custom external links.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",

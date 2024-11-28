@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [3.0.0](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/compare/v2.1.2...v3.0.0) - (2024-11-28)
+
+## 🚀 Features
+
+- Add support for typedoc 0.27.0 ([a196623](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/commit/a19662314a4c8bf9254d35cb482f4d6f3f998980))
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
 # [2.1.0](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/compare/v2.0.0...v2.1.0) - (2023-06-29)
 
 ## 🚀 Features
@@ -26,6 +36,7 @@ All notable changes to this project will be documented in this file.
 - Declare option ([9eea7c8](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/commit/9eea7c822383a9819f853c42c60101735a7c6ca4))
 
 # [0.0.1]
+
 (https://github.com/imranbarbhuiya/typedoc-plugin-external-link/tree/v0.0.1) - (2022-07-31)
 
 ## 🐛 Bug Fixes
@@ -39,4 +50,3 @@ All notable changes to this project will be documented in this file.
 ## 🚀 Features
 
 - Complete ([d156a72](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/commit/d156a7226f31b13eb028d2ffa8c855d72379f321))
-
