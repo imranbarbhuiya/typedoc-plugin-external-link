@@ -1,9 +1,5 @@
 import { Converter, ParameterType, type Application } from 'typedoc';
 
-import { resolvePath } from './utils/util.js';
-
-import type { getURL } from './interfaces/config';
-
 export function load(app: Application) {
 	app.options.addDeclaration({
 		name: 'externalLinkPath',
@@ -12,7 +8,7 @@ export function load(app: Application) {
 		defaultValue: 'externalConfig.js',
 	});
 
-	app.converter.on(Converter.EVENT_RESOLVE, () => {
+	app.converter.on(Converter.EVENT_RESOLVE, async () => {
 		const filePath = app.options.getValue('externalLinkPath');
 
 		if (!filePath || typeof filePath !== 'string') {
@@ -22,7 +18,7 @@ export function load(app: Application) {
 			return;
 		}
 
-		const config = resolvePath<{ getURL: getURL; packageNames: string[] }>(filePath);
+		const config = await import(filePath).catch(() => null);
 
 		if (!config) {
 			app.logger.error(`[typedoc-plugin-external-link]: External links config file \`${filePath}\` not found`);
