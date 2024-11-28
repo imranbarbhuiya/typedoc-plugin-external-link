@@ -1,4 +1,13 @@
 # Changelog
+All notable changes to this project will be documented in this file.
+
+# [3.0.2](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/compare/v3.0.1...v3.0.2) - (2024-11-28)
+
+## 🐛 Bug Fixes
+
+- Use import ([ed88adf](https://github.com/imranbarbhuiya/typedoc-plugin-external-link/commit/ed88adfb6c71072507f041fdf0f7ed9b93a6952d))
+
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
