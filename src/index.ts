@@ -18,7 +18,9 @@ export function load(app: Application) {
 			return;
 		}
 
-		const config = await import(filePath).catch(() => null);
+		const url = `file://${filePath}`;
+
+		const config = await import(url).catch(() => null);
 
 		if (!config) {
 			app.logger.error(`[typedoc-plugin-external-link]: External links config file \`${filePath}\` not found`);
