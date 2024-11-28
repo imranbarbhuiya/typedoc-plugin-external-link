@@ -22,7 +22,7 @@ You can use the following command to install this package, or replace npm instal
 npm install -D typedoc-plugin-external-link
 ```
 
-> **Note**: This plugin requires typedoc `>=0.24.0`.
+> **Note**: This plugin requires typedoc `>=0.27.0`.
 
 ## Usage
 
