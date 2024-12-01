@@ -40,14 +40,14 @@
 		"@typescript-eslint/eslint-plugin": "^8.16.0",
 		"@typescript-eslint/parser": "^8.16.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^9.15.0",
+		"eslint": "^9.16.0",
 		"eslint-config-mahir": "^1.0.6",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.2.10",
 		"pinst": "^3.0.0",
 		"prettier": "^3.4.1",
 		"tsup": "^8.3.5",
-		"typedoc": "^0.27.1",
+		"typedoc": "^0.27.2",
 		"typescript": "^5.7.2"
 	},
 	"peerDependencies": {
