@@ -37,17 +37,17 @@
 		"@favware/cliff-jumper": "^6.0.0",
 		"@favware/npm-deprecate": "^2.0.0",
 		"@types/node": "^22.14.1",
-		"@typescript-eslint/eslint-plugin": "^8.29.1",
-		"@typescript-eslint/parser": "^8.29.1",
+		"@typescript-eslint/eslint-plugin": "^8.30.1",
+		"@typescript-eslint/parser": "^8.30.1",
 		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^9.24.0",
+		"eslint": "^9.25.0",
 		"eslint-config-mahir": "^1.0.7",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.5.1",
 		"pinst": "^3.0.0",
 		"prettier": "^3.5.3",
 		"tsup": "^8.4.0",
-		"typedoc": "^0.28.2",
+		"typedoc": "^0.28.3",
 		"typescript": "^5.8.3"
 	},
 	"peerDependencies": {
@@ -83,5 +83,5 @@
 		"ansi-regex": "^5.0.1",
 		"minimist": "^1.2.8"
 	},
-	"packageManager": "yarn@4.9.0"
+	"packageManager": "yarn@4.9.1"
 }
