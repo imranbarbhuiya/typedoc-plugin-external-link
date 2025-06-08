@@ -36,9 +36,9 @@
 		"@commitlint/config-conventional": "^19.8.1",
 		"@favware/cliff-jumper": "^6.0.0",
 		"@favware/npm-deprecate": "^2.0.0",
-		"@types/node": "^22.15.29",
-		"@typescript-eslint/eslint-plugin": "^8.33.0",
-		"@typescript-eslint/parser": "^8.33.0",
+		"@types/node": "^22.15.30",
+		"@typescript-eslint/eslint-plugin": "^8.33.1",
+		"@typescript-eslint/parser": "^8.33.1",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^9.28.0",
 		"eslint-config-mahir": "^1.0.7",
@@ -79,5 +79,5 @@
 			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
-	"packageManager": "yarn@4.9.1"
+	"packageManager": "yarn@4.9.2"
 }
